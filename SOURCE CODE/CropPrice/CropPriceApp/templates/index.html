@@ -1,0 +1,57 @@
+{% load static %}
+<html>
+<head>
+<title>Farming</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><span>Farming Made Easy Using Machine Learning</span><small></small></h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content_bg">
+        <div class="menu_nav">
+          <ul>
+           <ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'AdminLogin' %}">Admin Login</a></li>
+      <li><a href="{% url 'FarmerLogin' %}">Farmer Login</a></li>
+	 <li><a href="{% url 'Signup' %}">New Farmer Signup Here</a></li>
+   </ul>
+          </ul>
+        </div>
+        <div class="hbg"><img src="{% static 'images/header_images.jpg' %}" width="915" height="286" alt="" /></div>
+
+		{{ data }}
+
+       <p align="justify"><font size="3" style="font-family: Comic Sans MS" color="black">Abstract-Agriculture is the primary mainstay of the
+economy in our country. In recent years because of uncertain
+trends in climate and other fluctuations in the price trends, the
+price of the crop has varied to a larger level. Farmers remain
+oblivious of these uncertainties, which spoils the crops and
+causes massive loss. They are unaware of the crop type which
+would benefit them most. Due to their limited knowledge of
+different crop diseases and their specific remedies, crops get
+damaged. This system is handy, easy-to-use. It provides
+accurate results in predicting the price of the crop. This
+framework utilizes Machine Learning's Decision Tree
+Regression Algorithm to predict crop price.</p>
+<p align="justify"><font size="3" style="font-family: Comic Sans MS" color="black">
+The attributes
+considered for prediction are rainfall, wholesale price index,
+month, and year. Consequently, the system gives an advance
+forecast to the farmers' which grows the speed of profit to
+them and consequently the country's economy. This system
+also incorporates other modules like weather forecast, crop
+recommendation, fertilizer recommendation, and shop, chat
+portal, and guide are also implemented.
+</p>
+ 
+ 
+  </body>
+</html>

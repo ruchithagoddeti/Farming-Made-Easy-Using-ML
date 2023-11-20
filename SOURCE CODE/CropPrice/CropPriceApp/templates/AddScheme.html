@@ -1,0 +1,111 @@
+{% load static %}
+<html>
+<head>
+<title>Farming</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="{% static 'datetimepicker.js' %}">
+</script>
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter scheme id");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Please Enter scheme name");
+	formObj.t2.focus();
+	return false;
+	}
+	
+	if(formObj.t3.value.length==0)
+	{
+	alert("Please Enter scheme description");
+	formObj.t3.focus();
+	return false;
+	}
+	if(formObj.t4.value.length==0)
+	{
+	alert("Please Enter required document");
+	formObj.t4.focus();
+	return false;
+	}
+	
+	if(formObj.t5.value.length==0)
+	{
+	alert("Please Enter scheme launch date");
+	formObj.t5.focus();
+	return false;
+	}
+	if(formObj.t6.value.length==0)
+	{
+	alert("Please Enter scheme end date");
+	formObj.t6.focus();
+	return false;
+	}
+	
+	return true;
+	}
+	</script>
+	 <script language="javascript" type="text/javascript" src="datetimepicker.js">
+</script>
+</head>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><span>Farming Made Easy using Machine Learning</span><small></small></h1>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content_bg">
+        <div class="menu_nav">
+        <ul>
+      
+      <li><a href="{% url 'AddScheme' %}">Add Government Schemes</a></li>
+      <li><a href="{% url 'index' %}">Logout</a></li>
+   </ul>
+        </div>
+        <div class="hbg"><img src="{% static 'images/header_images.jpg' %}" width="915" height="286" alt="" /></div>
+      				<center>
+<form name="f1" method="post" action={% url 'AddSchemeAction' %} onsubmit="return validate(this);">
+{% csrf_token %}<br/>
+   <h2><b>Add New Scheme Screen</b></h2>
+   
+	<font size="" color="red"><center>{{ data|safe }}</center></font>
+						
+						<table align="center" width="30%" >
+			 <tr><td><font size='' color=black>Scheme&nbsp;ID</b></td>
+			 <td><input type="text" name="t1" style="font-family: Comic Sans MS" size="30"></td></tr>
+         
+		  <tr><td><font size='' color=black>Scheme&nbsp;Name</b></td><td><input name="t2" type="text" size="30"></td></tr>
+
+			<tr><td><font size='' color=black>Scheme&nbsp;Description</b></td>
+			<td><input name="t3" type="Text" size="60"></td></td></tr>
+
+		    
+		   <tr><td><font size='' color=black>Required&nbsp;Documents</b></td><td><input type="text" name="t4" style="font-family: Comic Sans MS" size=50/></td></tr>
+
+          <tr><td><font size='' color=black>Launch&nbsp:Date</b></td><td>
+		  <input name="t5" type="Text" id="demo" maxlength="25" size="20" class="c2" ><a href="javascript:NewCal('demo','ddmmmyyyy',false,24)"><img src="{% static 'cal.gif' %}" width="16" height="16" border="0" alt="Pick a date"></a>
+</td></td></tr>
+		   <tr><td><font size='' color=black>End&nbsp;Date</b></td><td>
+		   <input name="t6" type="Text" id="demo1" maxlength="25" size="20" class="c2" ><a href="javascript:NewCal('demo1','ddmmmyyyy',false,24)"><img src="{% static 'cal.gif' %}" width="16" height="16" border="0" alt="Pick a date"></a>
+</td></td></tr>
+
+		 
+
+			<tr><td></td><td><input type="submit" value="Submit"></td>
+			</table>
+				</div>	
+					
+				</div>
+				
+					
+	</body>
+</html>
